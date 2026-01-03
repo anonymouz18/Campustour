@@ -1,10 +1,13 @@
+/*Default-Stile für alle Elemente*/
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* box-sizing*/
 }
 
 body{
     background-color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 header{
@@ -14,6 +17,8 @@ header{
 
 main{
     padding: 20px;
+    max-width: 900px;    
+    margin: 0 auto; /*zentiert den Inhalt*/
 }
 
 #nav{
@@ -41,10 +46,71 @@ footer
 {
     background-color: #7dbd0f;
     text-align: center;
-    padding: 0px;
+    padding: 10px; /*leicht angepasster Abstand*/
     position: fixed;
     bottom: 0;
     width: 100%;
     margin: 0px;
 }
- 
+
+form {
+    margin-top: 20px; /*Abstand nach oben*/
+}
+
+input[type="text"], /*für Textfelder*/
+input[type="number"],/*für Zahlenfelder*/
+select,            /*für Dropdown-Menüs*/
+
+textarea { /*für Textbereiche*/
+    width: 100%;       
+    max-width: 100%;   
+    padding: 8px;      
+    margin-top: 5px;   
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+
+    header {
+        padding: 10px;          
+        text-align: center;     
+    }
+
+    #nav li {
+        display: block;         /* Navigation untereinander */
+        margin: 5px 0;          
+    }
+
+    #nav li a {
+        font-size: 18px;        /* etwas kleiner */
+    }
+
+    main {
+        padding: 10px;          
+        margin-bottom: 70px;    /* Platz für fixen Footer */
+    }
+
+    footer {
+        padding: 8px;           
+        font-size: 14px;        
+    }
+
+    h1 {
+        font-size: 22px;        
+    }
+
+    h2 {
+        font-size: 18px;        
+    }
+
+    p,
+    label {
+        font-size: 16px;        
+    }
+
+    button {
+        width: 100%;            /* voller Bildschirm */
+        padding: 10px;          
+        font-size: 16px;        
+    }
+}
