@@ -10,10 +10,47 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-header{
+/* Header angepasst auf eine Zeile + Logo klein */
+header {
     background-color: #7dbd0f;
-    padding: 20px;
+    padding: 10px 20px;
+    display: flex;              /*  alles in einer Zeile */
+    align-items: center;        /* vertikal ausrichten */
+    gap: 15px;                  /* Abstand zwischen Elementen */
 }
+
+header img {
+    height: 40px;               /* Logo kleiner */
+    width: auto;                /* Proportionen beibehalten */
+}
+
+header h1 {
+    font-size: 22px;
+    margin: 0;
+    margin-right: auto;         /* schiebt Nav nach rechts */
+}
+
+header nav {
+    margin: 0;
+}
+
+header #nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header #nav li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+header #nav li a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+}
+
 
 main{
     padding: 20px;
@@ -70,11 +107,24 @@ textarea { /*für Textbereiche*/
 
 /* Mobile Styles */
 @media (max-width: 600px) {
-
+    /* Header angepasst auf eine Zeile + Logo klein */
     header {
-        padding: 10px;          
-        text-align: center;     
+        flex-wrap: wrap;        /* bei Bedarf umbrechen */
+        padding: 8px 15px;
     }
+    
+    header img {
+        height: 35px;           
+    }
+    
+    header h1 {
+        font-size: 18px;
+    }
+    
+    header #nav li {
+        margin-left: 10px;
+    }
+
 
     #nav li {
         display: block;         /* Navigation untereinander */
