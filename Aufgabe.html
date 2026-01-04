@@ -49,11 +49,18 @@
             <br><br>
 
             <button type="button" onclick="checkAnswer()">Antwort prüfen</button>
+
+            <p id="feedback" aria-live="polite"></p>
+
+            <!-- Button, der erst bei korrketer Eingabe erscheint -->
+            <button type="button" id="next-button" onclick="goToNext()" style="display: none;">
+                Weiter
+            </button>
         </form>
 
-        <p id="feedback" aria-live="polite"></p>
+        
 
-        <button> Weiter </button>
+
     </main>
 
     <footer>
@@ -64,10 +71,10 @@
         function checkAnswer() {
             const correctMC = "B";                // richtige Multiple-Choice-Antwort
             const correctText = "labor für gebäudeenergietechnik"; // erwarteter Kerntext
-
-            const mcSelection = document.querySelector('input[name="mc-answer"]:checked');
-            const freeText = document.getElementById("frei-text").value.trim().toLowerCase();
-            const feedback = document.getElementById("feedback");
+            const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
+            const mcSelection = document.querySelector('input[name="mc-answer"]:checked'); // ausgewählte Antwort
+            const freeText = document.getElementById("frei-text").value.trim().toLowerCase(); // freie Texteingabe
+            const feedback = document.getElementById("feedback"); // Feedback-Element
 
             let mcCorrect = false;
             let textCorrect = false;
@@ -83,15 +90,19 @@
             if (mcCorrect && textCorrect) {
                 feedback.textContent = "Super! Sowohl deine Auswahl als auch deine Eingabe sind korrekt. Du kannst zur nächsten Station weitergehen.";
                 feedback.style.color = "green";
+                nextButton.style.display = "block"; // Zeige den Button an
             } else if (mcCorrect && !textCorrect) {
                 feedback.textContent = "Die Multiple-Choice-Antwort ist korrekt, aber deine freie Eingabe stimmt noch nicht ganz. Versuche es erneut.";
                 feedback.style.color = "orange";
+                nextButton.style.display = "none"; // Verstecke den Button, wenn die Antwort falsch ist
             } else if (!mcCorrect && textCorrect) {
                 feedback.textContent = "Deine freie Eingabe passt, aber die Multiple-Choice-Antwort ist noch falsch. Wähle bitte eine andere Option.";
                 feedback.style.color = "orange";
+                nextButton.style.display = "none"; // Verstecke den Button, wenn die Antwort falsch ist
             } else {
                 feedback.textContent = "Das war leider noch nicht richtig. Überlege dir die Infos vor Ort noch einmal und versuche es erneut.";
                 feedback.style.color = "red";
+                nextButton.style.display = "none"; // Verstecke den Button, wenn die Antwort falsch ist
             }
         }
     </script>
