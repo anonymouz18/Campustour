@@ -51,6 +51,13 @@ header #nav li a {
     text-decoration: none;
 }
 
+/* Abstand unter allen h1, h2, h3 Überschriften */
+h1, h2, h3 {
+    margin-bottom: 10px;    /* 20px Abstand unter jeder Überschrift */
+    margin-top: 15px;    /* 25px Abstand über jeder Überschrift */
+
+}
+
 
 main{
     padding: 20px;
@@ -78,6 +85,11 @@ main{
 #nav li a:hover{
     color:  rgb(0, 65, 3);
     font-size: 21px;
+}
+
+/* Abstand unter Buttons */
+button {
+    margin-bottom: 20px;    /* 20px Abstand unter jedem Button */
 }
 
 /* Stile für die Campustour-Stationen */
