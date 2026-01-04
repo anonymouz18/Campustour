@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <a class="link" href="index.html">
+            <img src="img/csm_Bild-Wort-Marke_auf_weiss_1280x853_3722b5420f.jpg" alt="" width="300px">
+        </a>
+        <ul id="nav">
+            <li><a class="link" href="mensa.html" target="_blank">Übersicht</a></li>
+            <li><a class="link" href="bibliothek.html" target="_blank">Bibliothek</a></li>
+        </ul>
+    </header>
+    <main>
+        <h1>Und wohin jetzt</h1>
+        <p>Super, du hast die Frage richtig beantwortet! 
+            Jetzt kannst du dich auf den Weg zum nächsten Gebäude machen.
+            Doch wohin?
+        </p>
+
+        <p>
+           <h2> Tipp</h2> <!-- clue -->
+        </p>
+        <form id="quiz-form">
+            <fieldset>
+                <legend>Wähle eine Antwortmöglichkeit aus:</legend>
+
+                <label>
+                    <input type="radio" name="mc-answer" value="A">
+                    Gebäude A
+                </label><br>
+
+                <label>
+                    <input type="radio" name="mc-answer" value="B">
+                    Gebäude F
+                </label><br>
+
+                <label>
+                    <input type="radio" name="mc-answer" value="C">
+                    Gebäude C
+                </label><br>
+            </fieldset>
+            <button type="button" onclick="checkAnswer()">Antwort prüfen</button>
+    
+            <p id="feedback" aria-live="polite"></p>
+
+            <!-- Button, der erst bei korrketer Eingabe erscheint -->
+            <button type="button" id="next-button" onclick="goToNext()" style="display: none;">
+                ZuGebäude F gehen
+            </button>
+        </form>
+
+
+
+        <script>
+        function checkAnswer() {
+            const correctMC = "B";                // richtige Multiple-Choice-Antwort
+            const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
+            const mcSelection = document.querySelector('input[name="mc-answer"]:checked'); // ausgewählte Antwort
+            const feedback = document.getElementById("feedback"); // Feedback-Element
+
+            let mcCorrect = false;
+
+            if (mcSelection && mcSelection.value === correctMC) {
+                mcCorrect = true;
+            }
+
+            if (mcCorrect) {
+                feedback.textContent = "Super! Richtige Antwort, du kannst nun zum Gebäude gehen.";
+                feedback.style.color = "green";
+                nextButton.style.display = "block"; // Zeige den Button an
+            } 
+            else {
+                feedback.textContent = "Das war leider noch nicht richtig. Überlege dir die Antwort noch einmal und versuche es erneut.";
+                feedback.style.color = "red";
+                nextButton.style.display = "none"; // Verstecke den Button, wenn die Antwort falsch ist
+            }
+        }
+        </script>
+    </main>
+        <footer>
+        <p>&copy; 2025 HTW Berlin Campustour</p>
+    </footer>
+</body>
+
+</html>
