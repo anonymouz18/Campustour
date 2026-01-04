@@ -89,7 +89,8 @@ main{
 
 /* Abstand unter Buttons */
 button {
-    margin-bottom: 20px;    /* 20px Abstand unter jedem Button */
+    margin-bottom: 10px;    /* 20px Abstand unter jedem Button */
+    margin-top: 15px;       /* 25px Abstand über jedem Button */
 }
 
 /* Stile für die Campustour-Stationen */
