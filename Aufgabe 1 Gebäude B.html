@@ -20,32 +20,14 @@
 
     <main>
         <h2>Frage 1 – Gebäude B</h2>
-        <p>Wie heißt das Labor im Gebäude B, in dem die Versuche zur Gebäudeenergietechnik durchgeführt werden?</p>
+        <p>Geh zur Information neben dem Eingang. 
+            Finde heraus, was du brauchst, um Billard- oder Tischkicker-Equipment auszuleihen.</p>
 
         <form id="quiz-form">
-            <fieldset>
-                <legend>Wähle eine Antwortmöglichkeit aus:</legend>
-
-                <label>
-                    <input type="radio" name="mc-answer" value="A">
-                    Labor für Maschinenbau
-                </label><br>
-
-                <label>
-                    <input type="radio" name="mc-answer" value="B">
-                    Labor für Gebäudeenergietechnik
-                </label><br>
-
-                <label>
-                    <input type="radio" name="mc-answer" value="C">
-                    Informatik-Labor
-                </label><br>
-            </fieldset>
-
             <br>
 
-            <label for="frei-text">Eigene Eingabe (z.B. genaue Raumbezeichnung):</label><br>
-            <input type="text" id="frei-text" name="frei-text" placeholder="z.B. Labor für Gebäudeenergietechnik, Raum B123">
+            <label for="frei-text">Eigene Eingabe:</label><br>
+            <input type="text" id="frei-text" name="frei-text">
             <br><br>
 
             <button type="button" onclick="checkAnswer()">Antwort prüfen</button>
@@ -69,8 +51,7 @@
 
     <script>
         function checkAnswer() {
-            const correctMC = "B";                // richtige Multiple-Choice-Antwort
-            const correctText = "labor für gebäudeenergietechnik"; // erwarteter Kerntext
+            const correctText = "Student Card"; // erwarteter Kerntext
             const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
             const mcSelection = document.querySelector('input[name="mc-answer"]:checked'); // ausgewählte Antwort
             const freeText = document.getElementById("frei-text").value.trim().toLowerCase(); // freie Texteingabe

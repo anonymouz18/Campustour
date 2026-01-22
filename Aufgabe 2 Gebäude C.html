@@ -20,7 +20,7 @@
 
     <main>
         <h2>Frage 2 – Gebäude C</h2>
-        <p>...</p>
+        <p>In welchem Gebäude befindet sich die Maker-Space?</p>
 
         <form id="quiz-form">
             <fieldset>
@@ -28,25 +28,19 @@
 
                 <label>
                     <input type="radio" name="mc-answer" value="A">
-                    ...
+                    Gebäude B
                 </label><br>
 
                 <label>
                     <input type="radio" name="mc-answer" value="B">
-                    ...
+                    Gebäude C
                 </label><br>
 
                 <label>
                     <input type="radio" name="mc-answer" value="C">
-                    ...
+                    Gebäude G
                 </label><br>
             </fieldset>
-
-            <br>
-
-            <label for="frei-text">...:</label><br>
-            <input type="text" id="frei-text" name="frei-text" placeholder="z.B. Labor für Gebäudeenergietechnik, Raum B123">
-            <br><br>
 
             <button type="button" onclick="checkAnswer()">Antwort prüfen</button>
 
@@ -59,7 +53,7 @@
         </form>
     
     
-Untenstehendes noch anpassen
+
     
     </main>
 
@@ -70,7 +64,6 @@ Untenstehendes noch anpassen
     <script>
         function checkAnswer() {
             const correctMC = "B";                // richtige Multiple-Choice-Antwort
-            const correctText = "labor für gebäudeenergietechnik"; // erwarteter Kerntext
             const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
             const mcSelection = document.querySelector('input[name="mc-answer"]:checked'); // ausgewählte Antwort
             const freeText = document.getElementById("frei-text").value.trim().toLowerCase(); // freie Texteingabe
