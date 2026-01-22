@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <a class="link" href="index.html"><img src="img/csm_Bild-Wort-Marke_auf_weiss_1280x853_3722b5420f.jpg" alt=""
+                width="300px"></a>
+        <ul id="nav">
+            <li><a class="link" href="mensa.html" target="_blank">Übersicht</a></li>
+            <li><a class="link" href="bibliothek.html" target="_blank">Bibliothek</a></li>
+
+        </ul>
+    </header>
+
+    <main>
+        <h2>Frage 1 – Gebäude B</h2>
+        <p>Wie heißt das Labor im Gebäude B, in dem die Versuche zur Gebäudeenergietechnik durchgeführt werden?</p>
+
+        <form id="quiz-form">
+            <fieldset>
+                <legend>Wähle eine Antwortmöglichkeit aus:</legend>
+
+                <label>
+                    <input type="radio" name="mc-answer" value="A">
+                    Labor für Maschinenbau
+                </label><br>
+
+                <label>
+                    <input type="radio" name="mc-answer" value="B">
+                    Labor für Gebäudeenergietechnik
+                </label><br>
+
+                <label>
+                    <input type="radio" name="mc-answer" value="C">
+                    Informatik-Labor
+                </label><br>
+            </fieldset>
+
+            <br>
+
+            <label for="frei-text">Eigene Eingabe (z.B. genaue Raumbezeichnung):</label><br>
+            <input type="text" id="frei-text" name="frei-text" placeholder="z.B. Labor für Gebäudeenergietechnik, Raum B123">
+            <br><br>
+
+            <button type="button" onclick="checkAnswer()">Antwort prüfen</button>
+
+            <p id="feedback" aria-live="polite"></p>
+
+            <!-- Button, der erst bei korrketer Eingabe erscheint -->
+            <button type="button" id="next-button" onclick="goToNext()" style="display: none;">
+                Weiter
+            </button>
+        </form>
+
+        
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HTW Berlin Campustour</p>
+    </footer>
+
+    <script>
+        function checkAnswer() {
+            const correctMC = "B";                // richtige Multiple-Choice-Antwort
+            const correctText = "labor für gebäudeenergietechnik"; // erwarteter Kerntext
+            const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
+            const mcSelection = document.querySelector('input[name="mc-answer"]:checked'); // ausgewählte Antwort
+            const freeText = document.getElementById("frei-text").value.trim().toLowerCase(); // freie Texteingabe
+            const feedback = document.getElementById("feedback"); // Feedback-Element
+
+            let mcCorrect = false;
+            let textCorrect = false;
+
+            if (mcSelection && mcSelection.value === correctMC) {
+                mcCorrect = true;
+            }
+
+            if (freeText !== "" && freeText.includes(correctText)) {
+                textCorrect = true;
+            }
+
+            if (mcCorrect && textCorrect) {
+                feedback.textContent = "Super! Sowohl deine Auswahl als auch deine Eingabe sind korrekt. Du kannst zur nächsten Station weitergehen.";
+                feedback.style.color = "green";
+                nextButton.style.display = "block"; // Zeige den Button an
+            } else if (mcCorrect && !textCorrect) {
+                feedback.textContent = "Die Multiple-Choice-Antwort ist korrekt, aber deine freie Eingabe stimmt noch nicht ganz. Versuche es erneut.";
+                feedback.style.color = "orange";
+                nextButton.style.display = "none"; // Verstecke den Button, wenn die Antwort falsch ist
+            } else if (!mcCorrect && textCorrect) {
+                feedback.textContent = "Deine freie Eingabe passt, aber die Multiple-Choice-Antwort ist noch falsch. Wähle bitte eine andere Option.";
+                feedback.style.color = "orange";
+                nextButton.style.display = "none"; // Verstecke den Button, wenn die Antwort falsch ist
+            } else {
+                feedback.textContent = "Das war leider noch nicht richtig. Überlege dir die Infos vor Ort noch einmal und versuche es erneut.";
+                feedback.style.color = "red";
+                nextButton.style.display = "none"; // Verstecke den Button, wenn die Antwort falsch ist
+            }
+        }
+    </script>
+</body>
+</html>
+
