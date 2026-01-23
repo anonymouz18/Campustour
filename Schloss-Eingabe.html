@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <a class="link" href="index.html"><img src="img/csm_Bild-Wort-Marke_auf_weiss_1280x853_3722b5420f.jpg" alt=""
+                width="300px"></a>
+        <ul id="nav">
+            <li><a class="link" href="mensa.html" target="_blank">Übersicht</a></li>
+            <li><a class="link" href="bibliothek.html" target="_blank">Bibliothek</a></li>
+
+        </ul>
+    </header>
+    <h1>Campustour Schnitzeljagd</h1>
+    <div id="question">Stelle den 4-stelligen Code für HTW-Labor ein (Tipp: 2510)</div>
+    <div class="code-input">
+        <div class="wheel-container" data-index="0">
+            <button class="wheel-btn up" aria-label="Erhöhen">▲</button>
+            <div class="wheel-display" data-index="0">0</div>
+            <button class="wheel-btn down" aria-label="Verringern">▼</button>
+        </div>
+        <div class="wheel-container" data-index="1">
+            <button class="wheel-btn up" aria-label="Erhöhen">▲</button>
+            <div class="wheel-display" data-index="1">0</div>
+            <button class="wheel-btn down" aria-label="Verringern">▼</button>
+        </div>
+        <div class="wheel-container" data-index="2">
+            <button class="wheel-btn up" aria-label="Erhöhen">▲</button>
+            <div class="wheel-display" data-index="2">0</div>
+            <button class="wheel-btn down" aria-label="Verringern">▼</button>
+        </div>
+        <div class="wheel-container" data-index="3">
+            <button class="wheel-btn up" aria-label="Erhöhen">▲</button>
+            <div class="wheel-display" data-index="3">0</div>
+            <button class="wheel-btn down" aria-label="Verringern">▼</button>
+        </div>
+    </div>
+    <button id="submit">Prüfen</button>
+    <div id="result"></div>
+
+    <script>
+        const correctCode = '2510'; // Deine Kombination hier ändern
+        const wheels = document.querySelectorAll('.wheel-display');
+
+        // Buttons pro Rad zuweisen
+        document.querySelectorAll('.wheel-container').forEach((container, containerIndex) => {
+            const upBtn = container.querySelector('.up');
+            const downBtn = container.querySelector('.down');
+
+            upBtn.addEventListener('click', () => changeValue(containerIndex, -1));
+            downBtn.addEventListener('click', () => changeValue(containerIndex, 1));
+        });
+
+        function changeValue(index, delta) {
+            let val = parseInt(wheels[index].textContent) || 0;
+            val = (val + delta + 10) % 10;
+            wheels[index].textContent = val;
+        }
+
+        document.getElementById('submit').addEventListener('click', () => {
+            const code = Array.from(wheels).map(w => w.textContent).join('');
+            const result = document.getElementById('result');
+            if (code === correctCode) {
+                result.innerHTML = '<span class="correct">✅ Richtig! Nächste Station.</span>';
+            } else {
+                result.innerHTML = '<span class="wrong">❌ Falsch! Versuche 2510.</span>';
+                // Reset
+                wheels.forEach((wheel, i) => wheel.textContent = '0');
+            }
+        });
+    </script>
+</body>
+</html>

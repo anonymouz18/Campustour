@@ -1,255 +1,371 @@
 /*Default-Stile für alle Elemente*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* box-sizing*/
-}
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* box-sizing*/
+    }
 
-body{
-    background-color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+    body{
+        background-color: white;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
 
 /* Header angepasst auf eine Zeile + Logo klein */
-header {
-    background-color: #7dbd0f;
-    padding: 10px 20px;
-    display: flex;              /*  alles in einer Zeile */
-    align-items: center;        /* vertikal ausrichten */
-    gap: 15px;                  /* Abstand zwischen Elementen */
-}
+    header {
+        background-color: #7dbd0f;
+        padding: 10px 20px;
+        display: flex;              /*  alles in einer Zeile */
+        align-items: center;        /* vertikal ausrichten */
+        gap: 15px;                  /* Abstand zwischen Elementen */
+    }
 
-header img {
-    height: 40px;               /* Logo kleiner */
-    width: auto;                /* Proportionen beibehalten */
-}
+    header img {
+        height: 40px;               /* Logo kleiner */
+        width: auto;                /* Proportionen beibehalten */
+    }
 
-header h1 {
-    font-size: 22px;
-    margin: 0;
-    margin-right: auto;         /* schiebt Nav nach rechts */
-}
+    header h1 {
+        font-size: 22px;
+        margin: 0;
+        margin-right: auto;         /* schiebt Nav nach rechts */
+    }
 
-header nav {
-    margin: 0;
-}
+    header nav {
+        margin: 0;
+    }
 
-header #nav {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+    header #nav {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-header #nav li {
-    display: inline-block;
-    margin-left: 15px;
-}
+    header #nav li {
+        display: inline-block;
+        margin-left: 15px;
+    }
 
-header #nav li a {
-    font-size: 18px;
-    color: black;
-    text-decoration: none;
-}
+    header #nav li a {
+        font-size: 18px;
+        color: black;
+        text-decoration: none;
+    }
 
 /* Abstand unter allen h1, h2, h3 Überschriften */
-h1, h2, h3 {
-    margin-bottom: 10px;    /* 20px Abstand unter jeder Überschrift */
-    margin-top: 15px;    /* 25px Abstand über jeder Überschrift */
+    h1, h2, h3 {
+        margin-bottom: 10px;    /* 20px Abstand unter jeder Überschrift */
+        margin-top: 15px;    /* 25px Abstand über jeder Überschrift */
 
-}
+    }
 
 
-main{
-    padding: 20px;
-    max-width: 900px;    
-    margin: 0 auto; /*zentiert den Inhalt*/
-}
+    main{
+        padding: 20px;
+        max-width: 900px;    
+        margin: 0 auto; /*zentiert den Inhalt*/
+    }
 
-#nav{
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-}
+    #nav{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
 
-#nav li{
-    margin: 2px;
-    display: inline-block;
-}
+    #nav li{
+        margin: 2px;
+        display: inline-block;
+    }
 
-#nav li a{
-    font-size: 20px;
-    color: black;
-    text-decoration: none;
-}
+    #nav li a{
+        font-size: 20px;
+        color: black;
+        text-decoration: none;
+    }
 
-#nav li a:hover{
-    color:  rgb(0, 65, 3);
-    font-size: 21px;
+    #nav li a:hover{
+        color:  rgb(0, 65, 3);
+        font-size: 21px;
 }
 
 /* Abstand unter Buttons */
-button {
-    margin-bottom: 10px;    /* 20px Abstand unter jedem Button */
-    margin-top: 15px;       /* 25px Abstand über jedem Button */
-}
+    button {
+        margin-bottom: 10px;    /* 20px Abstand unter jedem Button */
+        margin-top: 15px;       /* 25px Abstand über jedem Button */
+    }
 
-/* Stile für die Campustour-Stationen */
-.stations {
-  margin-top: 2rem;
-}
+    /* Stile für die Campustour-Stationen */
+    .stations {
+    margin-top: 2rem;
+    }
 
-.stations h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
+    .stations h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    }
 
-.stations {
-  display: grid;
-  gap: 1.25rem;
-}
+    .stations {
+    display: grid;
+    gap: 1.25rem;
+    }
 
-.station-card {
-  display: block;
-  padding: 1.25rem 1.5rem;
-  border-radius: 0.75rem;
-  background: #ffffff;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-  position: relative;
-}
+    .station-card {
+    display: block;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    position: relative;
+    }
 
-.station-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.15);
-  background: #eff6ff;
-}
+    .station-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.15);
+    background: #eff6ff;
+    }
 
-.station-header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  margin-bottom: 0.35rem;
-}
+    .station-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.35rem;
+    }
 
-.station-number {
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #2563eb;
-}
+    .station-number {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #2563eb;
+    }
 
-.station-card h3 {
-  font-size: 1.1rem;
-  margin: 0;
-}
+    .station-card h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    }
 
-.station-desc {
-  margin: 0.3rem 0 0.6rem;
-  font-size: 0.95rem;
-  color: #4b5563;
-}
+    .station-desc {
+    margin: 0.3rem 0 0.6rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+    }
 
-.station-tasks {
-  margin: 0;
-  padding-left: 1.1rem;
-  font-size: 0.9rem;
-  color: #6b7280;
-}
+    .station-tasks {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+    }
 
-.station-tasks li {
-  margin-bottom: 0.15rem;
-}
+    .station-tasks li {
+    margin-bottom: 0.15rem;
+    }
 
-.station-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.6rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #1d4ed8;
-}
+    .station-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1d4ed8;
+    }
 
-.station-cta::after {
-  content: "→";
-  font-size: 0.95rem;
-}
+    .station-cta::after {
+    content: "→";
+    font-size: 0.95rem;
+    }
 
-.tour-outro {
-  margin-top: 2.5rem;
-  font-size: 0.95rem;
-  color: #4b5563;
-}
+    .tour-outro {
+    margin-top: 2.5rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+    }
 
-/* Stile für Telefontastatur */
+/* Telefontastatur */
 
-#question { 
-    font-size: 1.2em; 
-    margin-bottom: 20px; 
-}
+    #question { 
+        font-size: 1.2em; 
+        margin-bottom: 20px; 
+    }
 
-#display { 
-    font-size: 2em; 
-    font-family: monospace; 
-    margin: 20px 0; 
-    min-height: 50px; 
-    border: 2px solid #ccc; 
-    padding: 10px; 
-}
+    #display { 
+        font-size: 2em; 
+        font-family: monospace; 
+        margin: 20px 0; 
+        min-height: 50px; 
+        border: 2px solid #ccc; 
+        padding: 10px; 
+    }
 
-.keypad { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 10px; 
-    max-width: 300px; 
-    margin: 20px auto; 
-}
+    .keypad { 
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 10px; 
+        max-width: 300px; 
+        margin: 20px auto; 
+    }
 
-.keypad button { 
-    font-size: 1.5em; 
-    padding: 20px; 
-    border: 2px solid #333; 
-    background: #e0e0e0; 
-    border-radius: 10px; 
-    cursor: pointer; 
-}
+    .keypad button { 
+        font-size: 1.5em; 
+        padding: 20px; 
+        border: 2px solid #333; 
+        background: #e0e0e0; 
+        border-radius: 10px; 
+        cursor: pointer; 
+    }
 
-.keypad button:active { 
-    background: #d0d0d0; 
-}
+    .keypad button:active { 
+        background: #d0d0d0; 
+    }
 
-.keypad button span { 
-    font-size: 0.7em; 
-    display: block; 
-}
+    .keypad button span { 
+        font-size: 0.7em; 
+        display: block; 
+    }
 
-.clear {
-    grid-column: span 3;
-}
+    .clear {
+        grid-column: span 3;
+    }
 
-#submit { 
-    background: #4CAF50; 
-    color: white; 
-    font-size: 1.2em; 
-    margin-top: 20px; 
-    padding: 15px; 
-}
+    #submit { 
+        background: #4CAF50; 
+        color: white; 
+        font-size: 1.2em; 
+        margin-top: 20px; 
+        padding: 15px; 
+    }
 
-#result { 
-    margin-top: 20px; 
-    font-size: 1.5em; 
-}
+    #result { 
+        margin-top: 20px; 
+        font-size: 1.5em; 
+    }
 
-.correct { 
-    color: green; 
-}
+    .correct { 
+        color: green; 
+    }
 
-.wrong { 
-    color: red; 
-}
+    .wrong { 
+        color: red; 
+    }
+
+/* Vorhängeschloss */
+    .code-input {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin: 30px auto;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 20px;
+        max-width: 380px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .wheel-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 65px;
+        background: white;
+        padding: 8px;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .wheel-btn {
+        width: 48px;
+        height: 38px;
+        border: 2px solid #e5e5e7;
+        background: #f2f2f7;
+        font-size: 1.1em;
+        font-weight: 600;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.15s ease;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .wheel-btn:active {
+        background: #e5e5e7;
+        border-color: #d1d1d6;
+        transform: translateY(1px);
+    }
+
+    .up { margin-bottom: 4px; }
+    .down { margin-top: 4px; }
+
+    .wheel-display {
+        width: 64px;
+        height: 72px;
+        background: linear-gradient(145deg, #2c2c2e, #1c1c1e);
+        color: #fff;
+        font-size: 2.4em;
+        font-weight: 700;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 6px 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    #submit {
+        display: block;
+        margin: 25px auto 0;
+        background: linear-gradient(145deg, #007AFF, #0056CC);
+        color: white;
+        font-size: 1.1em;
+        font-weight: 600;
+        padding: 16px 36px;
+        border: none;
+        border-radius: 14px;
+        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(0,122,255,0.4);
+        transition: all 0.2s;
+    }
+
+    #submit:hover:not(:active) {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(0,122,255,0.5);
+    }
+
+    #submit:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0,122,255,0.3);
+    }
+
+    #result {
+        margin-top: 25px;
+        font-size: 1.4em;
+        font-weight: 500;
+        min-height: 35px;
+    }
+
+    .correct {
+        color: #34C759;
+        animation: success 0.6s ease;
+    }
+
+    .wrong {
+        color: #FF3B30;
+        animation: shake 0.5s ease;
+    }
+
+    @keyframes success {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        75% { transform: translateX(5px); }
+    }
 
 
 footer
@@ -378,4 +494,33 @@ textarea { /*für Textbereiche*/
         font-size: 1.2em; 
         margin-top: 15px; 
     }
+
+    /* Vorhängeschloss Mobile-Optimierung */
+        .code-input { 
+            gap: 8px; 
+            padding: 16px; 
+            max-width: 340px; 
+        }
+
+        .wheel-container { 
+            width: 58px; 
+            padding: 6px; 
+        }
+        .wheel-btn { 
+            width: 42px; 
+            height: 34px; 
+            font-size: 1em; 
+        }
+        .wheel-display { 
+            width: 56px; 
+            height: 62px; 
+            font-size: 2em; 
+        }
+        #question { 
+            font-size: 1em; 
+            padding: 0 15px; 
+        }
+        h1 { 
+            font-size: 1.4em; 
+        }
 }
