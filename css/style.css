@@ -184,6 +184,73 @@ button {
   color: #4b5563;
 }
 
+/* Stile für Telefontastatur */
+
+#question { 
+    font-size: 1.2em; 
+    margin-bottom: 20px; 
+}
+
+#display { 
+    font-size: 2em; 
+    font-family: monospace; 
+    margin: 20px 0; 
+    min-height: 50px; 
+    border: 2px solid #ccc; 
+    padding: 10px; 
+}
+
+.keypad { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    max-width: 300px; 
+    margin: 20px auto; 
+}
+
+.keypad button { 
+    font-size: 1.5em; 
+    padding: 20px; 
+    border: 2px solid #333; 
+    background: #e0e0e0; 
+    border-radius: 10px; 
+    cursor: pointer; 
+}
+
+.keypad button:active { 
+    background: #d0d0d0; 
+}
+
+.keypad button span { 
+    font-size: 0.7em; 
+    display: block; 
+}
+
+.clear {
+    grid-column: span 3;
+}
+
+#submit { 
+    background: #4CAF50; 
+    color: white; 
+    font-size: 1.2em; 
+    margin-top: 20px; 
+    padding: 15px; 
+}
+
+#result { 
+    margin-top: 20px; 
+    font-size: 1.5em; 
+}
+
+.correct { 
+    color: green; 
+}
+
+.wrong { 
+    color: red; 
+}
+
 
 footer
 {
@@ -268,5 +335,47 @@ textarea { /*für Textbereiche*/
         width: 100%;            /* voller Bildschirm */
         padding: 10px;          
         font-size: 16px;        
+    }
+
+    /* Telefontastatur Mobile-Optimierung - Tasten verkleinert */
+
+    #question { 
+        font-size: 1em; 
+        margin-bottom: 15px; 
+    }
+
+    #display { 
+        font-size: 1.5em; 
+        min-height: 40px; 
+        margin: 15px 0; 
+        padding: 8px; 
+    }
+
+    .keypad { 
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 8px; 
+        max-width: 280px; 
+        margin: 15px auto; 
+    }
+
+    .keypad button { 
+        font-size: 1.2em; 
+        padding: 15px 10px; 
+        min-height: 55px; /* Touch-freundlich */
+    }
+
+    .keypad button span { 
+        font-size: 0.6em; 
+    }
+
+    #submit { 
+        font-size: 1em; 
+        padding: 12px 20px; 
+        margin-top: 15px; 
+    }
+
+    #result { 
+        font-size: 1.2em; 
+        margin-top: 15px; 
     }
 }
