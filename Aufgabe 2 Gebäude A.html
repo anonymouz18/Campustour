@@ -19,33 +19,17 @@
     </header>
 
     <main>
-        <h2>Frage 2 – Gebäude A</h2>
-        <p>Foto-Quest</p>
+        <h2>Frage 1 – Gebäude A</h2>
+        <p>
+            Nenne zwei Studiengänge, die in Gebäude A angesiedelt sind.
+        </p>
 
         <form id="quiz-form">
-            <fieldset>
-                <legend>Wähle eine Antwortmöglichkeit aus:</legend>
-
-                <label>
-                    <input type="radio" name="mc-answer" value="A">
-                    ...
-                </label><br>
-
-                <label>
-                    <input type="radio" name="mc-answer" value="B">
-                    ...
-                </label><br>
-
-                <label>
-                    <input type="radio" name="mc-answer" value="C">
-                    ...
-                </label><br>
-            </fieldset>
-
+            
             <br>
 
             <label for="frei-text">Eigene Eingabe:</label><br>
-            <input type="text" id="frei-text" name="frei-text" placeholder="">
+            <input type="text" id="frei-text" name="frei-text" placeholder="z.B. Modedesign, Kommunikationsdesign, Industrial Design">
             <br><br>
 
             <button type="button" onclick="checkAnswer()">Antwort prüfen</button>
@@ -58,7 +42,7 @@
             </button>
         </form>
 
-        <a href="Info Gebäude A.html">Zu Informationen zum Gebäude A</a>
+        <a class="station-link" href="Aufgabe 2 Gebäude A.html">Zur Aufgabe 2</a>
 
     </main>
 
@@ -68,7 +52,6 @@
 
     <script>
         function checkAnswer() {
-            const correctMC = "B";                // richtige Multiple-Choice-Antwort
             const correctText = "labor für gebäudeenergietechnik"; // erwarteter Kerntext
             const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
             const mcSelection = document.querySelector('input[name="mc-answer"]:checked'); // ausgewählte Antwort
