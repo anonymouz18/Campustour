@@ -19,10 +19,9 @@
         </ul>
     </header>
     <main>
-        <h1>Und wohin jetzt</h1>
-        <p>Super, du hast die Frage richtig beantwortet! 
-            Jetzt kannst du dich auf den Weg zum nächsten Gebäude machen.
-            Doch wohin?
+        <h1>Und wohin jetzt?</h1>
+        <p>
+            Was ist der erste Buchstabe des Alphabets?
         </p>
 
         <p>
@@ -53,7 +52,7 @@
 
             <!-- Button, der erst bei korrketer Eingabe erscheint -->
             <button type="button" id="next-button" onclick="goToNext()" style="display: none;">
-                Zu Gebäude F gehen
+                Zu Gebäude A gehen
             </button>
         </form>
     </main>
@@ -64,7 +63,7 @@
 
         <script>
         function checkAnswer() {
-            const correctMC = "B";                // richtige Multiple-Choice-Antwort
+            const correctMC = "A";                // richtige Multiple-Choice-Antwort
             const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
             const mcSelection = document.querySelector('input[name="mc-answer"]:checked'); // ausgewählte Antwort
             const feedback = document.getElementById("feedback"); // Feedback-Element
