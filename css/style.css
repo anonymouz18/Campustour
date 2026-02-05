@@ -394,6 +394,15 @@ textarea { /*für Textbereiche*/
     margin-top: 5px;   
 }
 
+/* Responsive Design Bilder*/
+.responsive-img {
+    display: block;          /* Bild wie Block-Element */
+    max-width: 100%;         /* nie breiter als der Container */
+    height: auto;            /* Proportionen beibehalten */
+    margin: 12px auto 0;          /* zentrieren, falls gewünscht */
+}
+
+
 /* Mobile Styles */
 @media (max-width: 600px) {
     /* Header angepasst auf eine Zeile + Logo klein */
@@ -522,5 +531,12 @@ textarea { /*für Textbereiche*/
         }
         h1 { 
             font-size: 1.4em; 
+        }
+
+        /*Responsive Design Bilder Mobile Optimierung*/
+        .responsive-img {
+            width: 100%;        /* volle Breite des Containers */
+            height: auto;       /* Proportionen beibehalten */
+            margin-top: 12px;
         }
 }
