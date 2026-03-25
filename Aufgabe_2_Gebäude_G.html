@@ -1,79 +1,92 @@
 <!DOCTYPE html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aufgabe 2 – Gebäude G</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <a class="link" href="index.html">
-            <img src="img/csm_Bild-Wort-Marke_auf_weiss_1280x853_3722b5420f.jpg" alt="" width="300px">
-        </a>
-        <ul id="nav">
-            <li><a href="Übersicht.html">Übersicht</a></li>
-            <li><a href="https://webseiten.htw-berlin.de/files/Presse/Lageplaene/Lageplan_WH_DE.pdf"
-                    target="_blank">Lageplan</a></li>
-            <li><a href="https://lsf.htw-berlin.de" target="_blank">LSF</a></li>
-            <li><a href="https://moodle.htw-berlin.de" target="_blank">Moodle</a></li>
-            <li><a href="https://www.htw-berlin.de" target="_blank">HTW Berlin</a></li>
-        </ul>
+      <a class="link" href="index.html">
+        <img src="img/logo.svg" alt="" width="300px" />
+      </a>
+      <ul id="nav">
+        <li><a href="Übersicht.html">Übersicht</a></li>
+        <li>
+          <a
+            href="https://webseiten.htw-berlin.de/files/Presse/Lageplaene/Lageplan_WH_DE.pdf"
+            target="_blank"
+            >Lageplan</a
+          >
+        </li>
+        <li><a href="https://lsf.htw-berlin.de" target="_blank">LSF</a></li>
+        <li>
+          <a href="https://moodle.htw-berlin.de" target="_blank">Moodle</a>
+        </li>
+        <li>
+          <a href="https://www.htw-berlin.de" target="_blank">HTW Berlin</a>
+        </li>
+      </ul>
     </header>
 
     <main>
-        <h2>Frage 2 – Gebäude G</h2>
-        <p>
-            Wie viele Bildschirme mit Essensplänen gibt es in der Mensa?
-        </p>
+      <h2>Frage 2 – Gebäude G</h2>
+      <p>Wie viele Bildschirme mit Essensplänen gibt es in der Mensa?</p>
 
-        <form id="quiz-form">
-            <br>
-            <label for="frei-text">Eigene Eingabe:</label><br>
-            <input type="text" id="frei-text" name="frei-text">
+      <form id="quiz-form">
+        <br />
+        <label for="frei-text">Eigene Eingabe:</label><br />
+        <input type="text" id="frei-text" name="frei-text" />
 
-            <button type="button" onclick="checkAnswer()">Antwort prüfen</button>
+        <button type="button" onclick="checkAnswer()">Antwort prüfen</button>
 
-            <p id="feedback" aria-live="polite"></p>
+        <p id="feedback" aria-live="polite"></p>
 
-            <!-- Button, der erst bei korrketer Eingabe erscheint -->
-            <button type="button" id="next-button" onclick="window.location.href='Info_Gebäude_G.html'" style="display: none;">
-                Weiter
-            </button>
-        </form>
-
+        <!-- Button, der erst bei korrketer Eingabe erscheint -->
+        <button
+          type="button"
+          id="next-button"
+          onclick="window.location.href='Info_Gebäude_G.html'"
+          style="display: none"
+        >
+          Weiter
+        </button>
+      </form>
     </main>
 
     <footer>
-        <p>&copy; 2026 HTW Berlin Campustour</p>
+      <p>&copy; 2026 HTW Berlin Campustour</p>
     </footer>
 
     <script>
-        function checkAnswer() {
-            const correctText = "26"; // erwarteter Kerntext
-            const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
-            const freeText = document.getElementById("frei-text").value.trim().toLowerCase(); // freie Texteingabe
-            const feedback = document.getElementById("feedback"); // Feedback-Element
+      function checkAnswer() {
+        const correctText = "26"; // erwarteter Kerntext
+        const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
+        const freeText = document
+          .getElementById("frei-text")
+          .value.trim()
+          .toLowerCase(); // freie Texteingabe
+        const feedback = document.getElementById("feedback"); // Feedback-Element
 
-            let textCorrect = false;
+        let textCorrect = false;
 
-            if (freeText !== "" && freeText.includes(correctText)) {
-                textCorrect = true;
-            }
-
-            if (textCorrect) {
-                feedback.textContent = "Super! Deine Eingabe ist korrekt. Du kannst zur nächsten Station weitergehen.";
-                feedback.style.color = "green";
-                nextButton.style.display = "block"; // Zeige den Button an
-            } 
-            else {
-                feedback.textContent = "Das war leider noch nicht richtig. Überlege dir die Infos vor Ort noch einmal und versuche es erneut.";
-                feedback.style.color = "red";
-                nextButton.style.display = "none"; // Verstecke den Button, wenn die Antwort falsch ist
-            }
+        if (freeText !== "" && freeText.includes(correctText)) {
+          textCorrect = true;
         }
-    </script>
-</body>
-</html>
 
+        if (textCorrect) {
+          feedback.textContent =
+            "Super! Deine Eingabe ist korrekt. Du kannst zur nächsten Station weitergehen.";
+          feedback.style.color = "green";
+          nextButton.style.display = "block"; // Zeige den Button an
+        } else {
+          feedback.textContent =
+            "Das war leider noch nicht richtig. Überlege dir die Infos vor Ort noch einmal und versuche es erneut.";
+          feedback.style.color = "red";
+          nextButton.style.display = "none"; // Verstecke den Button, wenn die Antwort falsch ist
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,153 +1,168 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aufgabe 2 – Gebäude F</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <a class="link" href="index.html">
-            <img src="img/csm_Bild-Wort-Marke_auf_weiss_1280x853_3722b5420f.jpg" alt="" width="300px">
-        </a>
-        <ul id="nav">
-            <li><a href="Übersicht.html">Übersicht</a></li>
-            <li><a href="https://webseiten.htw-berlin.de/files/Presse/Lageplaene/Lageplan_WH_DE.pdf"
-                    target="_blank">Lageplan</a></li>
-            <li><a href="https://lsf.htw-berlin.de" target="_blank">LSF</a></li>
-            <li><a href="https://moodle.htw-berlin.de" target="_blank">Moodle</a></li>
-            <li><a href="https://www.htw-berlin.de" target="_blank">HTW Berlin</a></li>
-        </ul>
+      <a class="link" href="index.html">
+        <img src="img/logo.svg" alt="" width="300px" />
+      </a>
+      <ul id="nav">
+        <li><a href="Übersicht.html">Übersicht</a></li>
+        <li>
+          <a
+            href="https://webseiten.htw-berlin.de/files/Presse/Lageplaene/Lageplan_WH_DE.pdf"
+            target="_blank"
+            >Lageplan</a
+          >
+        </li>
+        <li><a href="https://lsf.htw-berlin.de" target="_blank">LSF</a></li>
+        <li>
+          <a href="https://moodle.htw-berlin.de" target="_blank">Moodle</a>
+        </li>
+        <li>
+          <a href="https://www.htw-berlin.de" target="_blank">HTW Berlin</a>
+        </li>
+      </ul>
     </header>
 
     <main>
-        <h2>Frage 2 – Gebäude F</h2>
-        <p>
-            In dem Gebäude befindet sich ein Foodsharing-Kühlschrank.
-            Schau dir den rechten Zettel, der daran hängt, an.
-            Was steht in dem zweiten grün markierten Feld, der erlaubten Lebensmittel?
-        </p>
-        <p>
-            (Tipp: Gib den Buchstaben mit der alten Handy-Tastatur ein!)
-        </p>
+      <h2>Frage 2 – Gebäude F</h2>
+      <p>
+        In dem Gebäude befindet sich ein Foodsharing-Kühlschrank. Schau dir den
+        rechten Zettel, der daran hängt, an. Was steht in dem zweiten grün
+        markierten Feld, der erlaubten Lebensmittel?
+      </p>
+      <p>(Tipp: Gib den Buchstaben mit der alten Handy-Tastatur ein!)</p>
 
-        <!-- Formular, aber Submit wird per JS verhindert -->
-        <form id="quiz-form">
-            <div id="display">Eingabe...</div>
+      <!-- Formular, aber Submit wird per JS verhindert -->
+      <form id="quiz-form">
+        <div id="display">Eingabe...</div>
 
-            <div class="keypad">
-                <button type="button" data-key="1">1<br><span>/</span></button>
-                <button type="button" data-key="2">2<br><span>ABC</span></button>
-                <button type="button" data-key="3">3<br><span>DEF</span></button>
-                <button type="button" data-key="4">4<br><span>GHI</span></button>
-                <button type="button" data-key="5">5<br><span>JKL</span></button>
-                <button type="button" data-key="6">6<br><span>MNO</span></button>
-                <button type="button" data-key="7">7<br><span>PQRS</span></button>
-                <button type="button" data-key="8">8<br><span>TUV</span></button>
-                <button type="button" data-key="9">9<br><span>WXYZ</span></button>
-                <button type="button" data-key="0" class="clear">0<br><span>Löschen</span></button>
-            </div>
+        <div class="keypad">
+          <button type="button" data-key="1">1<br /><span>/</span></button>
+          <button type="button" data-key="2">2<br /><span>ABC</span></button>
+          <button type="button" data-key="3">3<br /><span>DEF</span></button>
+          <button type="button" data-key="4">4<br /><span>GHI</span></button>
+          <button type="button" data-key="5">5<br /><span>JKL</span></button>
+          <button type="button" data-key="6">6<br /><span>MNO</span></button>
+          <button type="button" data-key="7">7<br /><span>PQRS</span></button>
+          <button type="button" data-key="8">8<br /><span>TUV</span></button>
+          <button type="button" data-key="9">9<br /><span>WXYZ</span></button>
+          <button type="button" data-key="0" class="clear">
+            0<br /><span>Löschen</span>
+          </button>
+        </div>
 
-            <!-- Kein echter Submit, nur Button -->
-            <button type="button" id="submit">Abschicken</button>
+        <!-- Kein echter Submit, nur Button -->
+        <button type="button" id="submit">Abschicken</button>
 
-            <div id="result"></div>
+        <div id="result"></div>
 
-            <!-- Optional: verstecktes Textfeld, falls du den Wert auch klassisch brauchst -->
-            <input type="hidden" id="loesung">
+        <!-- Optional: verstecktes Textfeld, falls du den Wert auch klassisch brauchst -->
+        <input type="hidden" id="loesung" />
 
-            <p id="feedback" aria-live="polite"></p>
+        <p id="feedback" aria-live="polite"></p>
 
-            <!-- Button, der erst bei korrekter Eingabe erscheint -->
-            <button
-                type="button" id="next-button" onclick="window.location.href='Info_Gebäude_F.html'" style="display: none;">
-                Weiter
-            </button>
-        </form>
+        <!-- Button, der erst bei korrekter Eingabe erscheint -->
+        <button
+          type="button"
+          id="next-button"
+          onclick="window.location.href='Info_Gebäude_F.html'"
+          style="display: none"
+        >
+          Weiter
+        </button>
+      </form>
     </main>
 
     <footer>
-        <p>&copy; 2026 HTW Berlin Campustour</p>
+      <p>&copy; 2026 HTW Berlin Campustour</p>
     </footer>
 
     <script>
-        const quizForm = document.getElementById('quiz-form');
-        const keypad = document.querySelector('.keypad');
-        const display = document.getElementById('display');
-        const submit = document.getElementById('submit');
-        const result = document.getElementById('result');
-        const loesungInput = document.getElementById('loesung');
-        const nextButton = document.getElementById('next-button');
+      const quizForm = document.getElementById("quiz-form");
+      const keypad = document.querySelector(".keypad");
+      const display = document.getElementById("display");
+      const submit = document.getElementById("submit");
+      const result = document.getElementById("result");
+      const loesungInput = document.getElementById("loesung");
+      const nextButton = document.getElementById("next-button");
 
-        let lastKey = '';
-        let lastKeyTime = 0;
-        let input = '';
+      let lastKey = "";
+      let lastKeyTime = 0;
+      let input = "";
 
-        // T9-Mapping
-        const mapping = {
-            '1': '/ ',
-            '2': 'ABC',
-            '3': 'DEF',
-            '4': 'GHI',
-            '5': 'JKL',
-            '6': 'MNO',
-            '7': 'PQRS',
-            '8': 'TUV',
-            '9': 'WXYZ'
-        };
+      // T9-Mapping
+      const mapping = {
+        1: "/ ",
+        2: "ABC",
+        3: "DEF",
+        4: "GHI",
+        5: "JKL",
+        6: "MNO",
+        7: "PQRS",
+        8: "TUV",
+        9: "WXYZ",
+      };
 
-        // Formular-Submit komplett verhindern (Enter etc.)
-        quizForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-        });
+      // Formular-Submit komplett verhindern (Enter etc.)
+      quizForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+      });
 
-        keypad.addEventListener('click', (e) => {
-            const button = e.target.closest('button');
-            if (!button) return;
+      keypad.addEventListener("click", (e) => {
+        const button = e.target.closest("button");
+        if (!button) return;
 
-            const key = button.dataset.key;
-            if (key === undefined) return;
+        const key = button.dataset.key;
+        if (key === undefined) return;
 
-            const now = Date.now();
+        const now = Date.now();
 
-            if (key === '0') {
-                // Löschen
-                input = '';
-                display.textContent = 'Eingabe...';
-                loesungInput.value = '';
-                return;
-            }
+        if (key === "0") {
+          // Löschen
+          input = "";
+          display.textContent = "Eingabe...";
+          loesungInput.value = "";
+          return;
+        }
 
-            if (key === lastKey && now - lastKeyTime < 1000) {
-                // Nächster Buchstabe auf derselben Taste
-                const letters = mapping[key];
-                const lastChar = input.slice(-1);
-                const idx = letters.indexOf(lastChar);
-                const nextIdx = (idx + 1) % letters.length;
-                input = input.slice(0, -1) + letters[nextIdx];
-            } else {
-                // Erster Buchstabe dieser Taste
-                input += mapping[key][0];
-            }
+        if (key === lastKey && now - lastKeyTime < 1000) {
+          // Nächster Buchstabe auf derselben Taste
+          const letters = mapping[key];
+          const lastChar = input.slice(-1);
+          const idx = letters.indexOf(lastChar);
+          const nextIdx = (idx + 1) % letters.length;
+          input = input.slice(0, -1) + letters[nextIdx];
+        } else {
+          // Erster Buchstabe dieser Taste
+          input += mapping[key][0];
+        }
 
-            lastKey = key;
-            lastKeyTime = now;
-            display.textContent = input;
-            loesungInput.value = input;
-        });
+        lastKey = key;
+        lastKeyTime = now;
+        display.textContent = input;
+        loesungInput.value = input;
+      });
 
-        submit.addEventListener('click', () => {
-            const answer = input.toUpperCase().trim();
+      submit.addEventListener("click", () => {
+        const answer = input.toUpperCase().trim();
 
-            if (['OBST', 'GEMÜSE', 'OBST/GEMUESE'].includes(answer)) {
-                result.innerHTML = '<span class="correct">Richtig! Nächste Station freigeschaltet.</span>';
-                nextButton.style.display = 'inline-block';
-            } else {
-                result.innerHTML = '<span class="wrong">Falsch! Versuche es nochmal.</span>';
-                nextButton.style.display = 'none';
-            }
-        });
+        if (["OBST", "GEMÜSE", "OBST/GEMUESE"].includes(answer)) {
+          result.innerHTML =
+            '<span class="correct">Richtig! Nächste Station freigeschaltet.</span>';
+          nextButton.style.display = "inline-block";
+        } else {
+          result.innerHTML =
+            '<span class="wrong">Falsch! Versuche es nochmal.</span>';
+          nextButton.style.display = "none";
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
