@@ -8,6 +8,9 @@
     body{
         background-color: white;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        min-height: 100vh; /*min-height für Footer-Fixierung*/ 
+        display: flex; /*Flexbox für vertikale Anordnung*/
+        flex-direction: column;
     }
 
 /* Header angepasst auf eine Zeile + Logo klein */
@@ -63,6 +66,7 @@
         padding: 20px;
         max-width: 900px;    
         margin: 0 auto; /*zentiert den Inhalt*/
+        flex: 1; /*nimmt den verfügbaren Platz ein, damit der Footer unten bleibt*/
     }
 
     #nav{
@@ -372,11 +376,9 @@ footer
 {
     background-color: #7dbd0f;
     text-align: center;
-    padding: 10px; /*leicht angepasster Abstand*/
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 10px; /*leicht angepasster Abstand*/    
     margin: 0px;
+    margin-top: auto; /*schiebt den Footer ans Ende der Seite*/
 }
 
 form {
@@ -435,7 +437,6 @@ textarea { /*für Textbereiche*/
 
     main {
         padding: 10px;          
-        margin-bottom: 70px;    /* Platz für fixen Footer */
     }
 
     footer {
