@@ -4,40 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>Aufgabe 1 – Gebäude B</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <a class="link" href="index.html"><img src="img/csm_Bild-Wort-Marke_auf_weiss_1280x853_3722b5420f.jpg" alt=""
-                width="300px"></a>
+        <a class="link" href="index.html">
+            <img src="img/csm_Bild-Wort-Marke_auf_weiss_1280x853_3722b5420f.jpg" alt="" width="300px">
+        </a>
         <ul id="nav">
-            <li><a class="link" href="Übersicht.html" target="_blank">Übersicht</a></li>
-            <li><a class="link" href="https://webseiten.htw-berlin.de/files/Presse/Lageplaene/Lageplan_WH_DE.pdf" target="_blank">Lageplan</a></li>
-
+            <li><a href="Übersicht.html">Übersicht</a></li>
+            <li><a href="https://webseiten.htw-berlin.de/files/Presse/Lageplaene/Lageplan_WH_DE.pdf"
+                    target="_blank">Lageplan</a></li>
+            <li><a href="https://lsf.htw-berlin.de" target="_blank">LSF</a></li>
+            <li><a href="https://moodle.htw-berlin.de" target="_blank">Moodle</a></li>
+            <li><a href="https://www.htw-berlin.de" target="_blank">HTW Berlin</a></li>
         </ul>
     </header>
 
     <main>
-        <h2>Frage 2 – Gebäude G</h2>
+        <h2>Frage 1 – Gebäude B</h2>
         <p>
-            Wie viele Bildschirme mit Essensplänen gibt es in der Mensa?
+            Geh zur Information neben dem Eingang. 
+            Finde heraus, was du brauchst, um Billard- oder Tischkicker-Equipment auszuleihen.
         </p>
-
+        <p>
+            <img src="img/Aufgabe 1 Gebäude B.jpg" alt="Foto des Billard-Tisches" class="responsive-img">
+        </p>
         <form id="quiz-form">
+            
             <br>
+
             <label for="frei-text">Eigene Eingabe:</label><br>
             <input type="text" id="frei-text" name="frei-text">
+            <br><br>
 
             <button type="button" onclick="checkAnswer()">Antwort prüfen</button>
 
             <p id="feedback" aria-live="polite"></p>
 
             <!-- Button, der erst bei korrketer Eingabe erscheint -->
-            <button type="button" id="next-button" onclick="window.location.href='Info Gebäude G.html'" style="display: none;">
+            <button type="button" id="next-button" onclick="window.location.href='Aufgabe_2_Gebäude_B.html'" style="display: none;">
                 Weiter
             </button>
         </form>
+
 
     </main>
 
@@ -47,7 +58,7 @@
 
     <script>
         function checkAnswer() {
-            const correctText = "26"; // erwarteter Kerntext
+            const correctText = "student card"; // erwarteter Kerntext
             const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
             const freeText = document.getElementById("frei-text").value.trim().toLowerCase(); // freie Texteingabe
             const feedback = document.getElementById("feedback"); // Feedback-Element

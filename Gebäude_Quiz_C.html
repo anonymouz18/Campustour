@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>Gebäude-Quiz C</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -14,14 +14,19 @@
             <img src="img/csm_Bild-Wort-Marke_auf_weiss_1280x853_3722b5420f.jpg" alt="" width="300px">
         </a>
         <ul id="nav">
-            <li><a class="link" href="Übersicht.html" target="_blank">Übersicht</a></li>
-            <li><a class="link" href="https://webseiten.htw-berlin.de/files/Presse/Lageplaene/Lageplan_WH_DE.pdf" target="_blank">Lageplan</a></li>
+            <li><a href="Übersicht.html">Übersicht</a></li>
+            <li><a href="https://webseiten.htw-berlin.de/files/Presse/Lageplaene/Lageplan_WH_DE.pdf"
+                    target="_blank">Lageplan</a></li>
+            <li><a href="https://lsf.htw-berlin.de" target="_blank">LSF</a></li>
+            <li><a href="https://moodle.htw-berlin.de" target="_blank">Moodle</a></li>
+            <li><a href="https://www.htw-berlin.de" target="_blank">HTW Berlin</a></li>
         </ul>
     </header>
+
     <main>
-        <h1>Und wohin jetzt</h1>
+        <h1>Und wohin jetzt?</h1>
         <p>
-            Welches Gebäude liegt zwischen den Gebäuden H, G und E?
+            Es ist das längste Gebäude auf dem Campus Wilhelminenhof.
         </p>
 
         <p>
@@ -33,17 +38,17 @@
 
                 <label>
                     <input type="radio" name="mc-answer" value="A">
-                    Gebäude F
+                    Gebäude B
                 </label><br>
 
                 <label>
                     <input type="radio" name="mc-answer" value="B">
-                    Gebäude C
+                    Gebäude G
                 </label><br>
 
                 <label>
                     <input type="radio" name="mc-answer" value="C">
-                    Gebäude G
+                    Gebäude C
                 </label><br>
             </fieldset>
             <button type="button" onclick="checkAnswer()">Antwort prüfen</button>
@@ -52,7 +57,7 @@
 
             <!-- Button, der erst bei korrketer Eingabe erscheint -->
             <button type="button" id="next-button" onclick="goToNext()" style="display: none;">
-                <a href="Aufgabe 1 Gebäude F.html">Zu "Aufgabe 1 Gebäude F" gehen</a>
+                <a href="Aufgabe_1_Gebäude_C.html">Zu "Aufgabe 1 Gebäude C" gehen</a>
             </button>
         </form>
     </main>
@@ -63,7 +68,7 @@
 
         <script>
         function checkAnswer() {
-            const correctMC = "A";                // richtige Multiple-Choice-Antwort
+            const correctMC = "C";                // richtige Multiple-Choice-Antwort
             const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
             const mcSelection = document.querySelector('input[name="mc-answer"]:checked'); // ausgewählte Antwort
             const feedback = document.getElementById("feedback"); // Feedback-Element

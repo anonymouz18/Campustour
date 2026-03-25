@@ -4,63 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>Gebäude-Quiz B</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
-        <a class="link" href="index.html"><img src="img/csm_Bild-Wort-Marke_auf_weiss_1280x853_3722b5420f.jpg" alt=""
-                width="300px"></a>
+        <a class="link" href="index.html">
+            <img src="img/csm_Bild-Wort-Marke_auf_weiss_1280x853_3722b5420f.jpg" alt="" width="300px">
+        </a>
         <ul id="nav">
-            <li><a class="link" href="Übersicht.html" target="_blank">Übersicht</a></li>
-            <li><a class="link" href="https://webseiten.htw-berlin.de/files/Presse/Lageplaene/Lageplan_WH_DE.pdf" target="_blank">Lageplan</a></li>
-
+            <li><a href="Übersicht.html">Übersicht</a></li>
+            <li><a href="https://webseiten.htw-berlin.de/files/Presse/Lageplaene/Lageplan_WH_DE.pdf"
+                    target="_blank">Lageplan</a></li>
+            <li><a href="https://lsf.htw-berlin.de" target="_blank">LSF</a></li>
+            <li><a href="https://moodle.htw-berlin.de" target="_blank">Moodle</a></li>
+            <li><a href="https://www.htw-berlin.de" target="_blank">HTW Berlin</a></li>
         </ul>
     </header>
 
     <main>
-        <h2>Frage 1 – Gebäude G</h2>
+        <h1>Start - aber wo?</h1>
         <p>
-            Welche Münze brauchst du als Pfandstück, um einen Spind der Bibliothek zu nutzen?
+            In welchem Gebäude befindet sich die Information?
         </p>
 
+        <p>
+           <h2> Tipp</h2> <!-- clue -->
+        </p>
         <form id="quiz-form">
             <fieldset>
                 <legend>Wähle eine Antwortmöglichkeit aus:</legend>
 
                 <label>
                     <input type="radio" name="mc-answer" value="A">
-                    50 Cent
+                    Gebäude A
                 </label><br>
 
                 <label>
                     <input type="radio" name="mc-answer" value="B">
-                    1 Euro
+                    Gebäude B
                 </label><br>
 
                 <label>
                     <input type="radio" name="mc-answer" value="C">
-                    2 Euro
+                    Gebäude C
                 </label><br>
             </fieldset>
-
             <button type="button" onclick="checkAnswer()">Antwort prüfen</button>
-
+    
             <p id="feedback" aria-live="polite"></p>
 
             <!-- Button, der erst bei korrketer Eingabe erscheint -->
-            <button type="button" id="next-button" onclick="window.location.href='Aufgabe 2 Gebäude G.html'" style="display: none;">
-                Weiter
+            <button type="button" id="next-button" onclick="goToNext()" style="display: none;">
+                <a href="Aufgabe_1_Gebäude_B.html">Zu "Aufgabe 1 Gebäude B" gehen</a>
             </button>
         </form>
-
     </main>
-
     <footer>
         <p>&copy; 2026 HTW Berlin Campustour</p>
     </footer>
 
-    <script>
+
+        <script>
         function checkAnswer() {
             const correctMC = "B";                // richtige Multiple-Choice-Antwort
             const nextButton = document.getElementById("next-button"); // Button zur nächsten Station
@@ -73,18 +79,19 @@
                 mcCorrect = true;
             }
 
-            if (mcSelection && mcCorrect) {
-                feedback.textContent = "Super! Deine Auswahl ist korrekt. Du kannst zur nächsten Station weitergehen.";
+            if (mcCorrect) {
+                feedback.textContent = "Super! Richtige Antwort, du kannst nun zum Gebäude gehen.";
                 feedback.style.color = "green";
                 nextButton.style.display = "block"; // Zeige den Button an
             } 
             else {
-                feedback.textContent = "Das war leider noch nicht richtig. Überlege dir die Infos vor Ort noch einmal und versuche es erneut.";
+                feedback.textContent = "Das war leider noch nicht richtig. Überlege dir die Antwort noch einmal und versuche es erneut.";
                 feedback.style.color = "red";
                 nextButton.style.display = "none"; // Verstecke den Button, wenn die Antwort falsch ist
             }
         }
-    </script>
-</body>
-</html>
+        </script>
 
+</body>
+
+</html>
